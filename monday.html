@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Login Form </h1>
+    <script>
+            let email_input=document.createElement("input")
+            email_input.setAttribute("type","email")
+            email_input.setAttribute("id","email")
+            email_input.setAttribute("name","email")
+            document.body.append(email_input)
+            let email=document.getElementById("email")
+            console.log(email)
+
+            let pass_input=document.createElement("input")
+            pass_input.setAttribute("type","password")
+            pass_input.setAttribute("id","password")
+            pass_input.setAttribute("name","password")
+            document.body.append(pass_input)
+            let password=document.getElementsByName("password")[0]
+            console.log(password)
+
+            let submit_button=document.createElement("button")
+            document.body.append(submit_button)
+            
+            let btn=document.getElementsByTagName("button")[0]
+            console.log(btn)
+            btn.innertext="submit";
+            let obj={};
+            btn.addEventListener("click" , function () {
+                obj.email = email.value ,
+                obj.password = password.value,
+                console.log(obj)
+                for(i in obj){
+                    let ele=document.createElement("p")
+                    document.body.appendChild(ele)
+                    ele.innerText='the value of ${i} is:${obj[i]}'
+                }
+            })
+    </script>
+</body>
+</html>
